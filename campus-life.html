@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Persistent School Photo Gallery - Landmark International School</title>
+<meta name="description" content="Explore the vibrant campus life and memorable moments of Landmark International School through our photo gallery.">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+
+  body {
+    background: #f4f7fa;
+    color: #88212b;
+    line-height: 1.6;
+  }
+
+  /* Hero Section */
+  header.hero {
+    background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+    color: #fff;
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 6px 25px rgba(20, 80, 149, 0.3);
+    margin: 2rem auto 4rem;
+    max-width: 1100px;
+  }
+  header.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  header.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #cbd7eb;
+    font-weight: 500;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Navbar */
+  .navbar {
+    background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border: white 4px solid;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    list-style: none;
+  }
+
+  .navbar li {
+    flex: 0 0 auto;
+    margin: 0 10px;
+  }
+
+  .navbar li a {
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px; 
+    display: block;
+    transition: background 0.3s ease;
+  }
+
+  .navbar li a:hover {
+    background: linear-gradient(135deg, #b75e7e 0%, #88212b 100%);
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0.5rem 1rem;
+    }
+
+    .navbar li {
+      margin: 0 5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navbar li a {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Links */
+  a {
+    color: #88212b;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    bottom: -4px;
+    left: 0;
+    border-radius: 1px;
+    transition: width 0.3s ease;
+  }
+
+  a:hover {
+    color: whitesmoke;
+  }
+
+  a:hover::after {
+    width: 100%;
+  }
+
+  /* Upload Button */
+  .upload-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto 3rem;
+    max-width: 1100px;
+  }
+  .upload-button {
+    background: #88212b;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(28, 61, 107, 0.3);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .upload-button:hover {
+    background: #b75e7e;
+    box-shadow: 0 8px 25px rgba(58, 134, 255, 0.3);
+  }
+  input[type="file"] {
+    display: none;
+  }
+
+  /* Gallery Grid */
+  .gallery {
+    max-width: 1100px;
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Gallery Items */
+  .gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+  }
+  .gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+  }
+
+  /* Footer Styles */
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    background:  #933638;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #cbd7eb;
+    font-size: larger;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>School Photo Gallery</h1>
+  <p>Explore the campus life, activities, and memorable moments of Landmark International School through our curated photo gallery.</p>
+  <nav>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Aboutus.html">About Us</a></li>
+      <li><a href="admissions.html">Admissions</a></li>
+      <li><a href="campus-life.html">Campus Life</a></li>
+      <li><a href="hostel.html">Hostel Details</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="sports.html">Sports</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="basketball.jpg" alt="Building 2">
+  </div>
+  <div class="gallery-item">
+    <img src="boxing.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="class1.jpeg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="skating.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="director.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="director2.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="houses.png" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="IMG-20250528-WA0002.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="IMG-20250528-WA0005.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="IMG-20250528-WA0006.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="IMG-20250528-WA0007.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="IMG-20250528-WA0008.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="IMG-20250528-WA0009.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="IMG-20250528-WA0009.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="IMG-20250528-WA0010.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="IMG-20250528-WA0011.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="IMG-20250528-WA0012.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="WhatsApp Image 2025-05-28 at 15.13.49_704f77d4.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="logo.jpeg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="ourfaculty.jpg" alt="Building 1">
+  </div>
+  <div class="gallery-item">
+    <img src="Screenshot 2025-05-27 213948.png" alt="Building 1">
+  </div>
+  
+  <!-- Add more gallery items as needed -->
+</div>
+
+<footer>
+  <p>&copy; 2023 Landmark International School. All rights reserved.</p>
+  <p>Follow us on <a style="color: #cbd7eb;" href="https://www.facebook.com/greatInfrastructureSurroundedBySereneBeauty" target="_blank">Facebook</a> | Contact no.-082220 95565</p>
+  <p>Designed by Landmark International School Web Team - JIVESH DAHIYA</p>
+</footer>
+</body>
+</html>

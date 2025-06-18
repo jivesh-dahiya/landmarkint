@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Hostel facilities at Landmark International School." />
+  <meta name="keywords" content="Landmark International School, hostel, facilities, student accommodation" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hostel Facilities - Landmark International School</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f5fb;
+    color: #1c3d6b;
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Navbar */
+ /* Navbar */
+.navbar {
+  background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+  padding: 1rem 2rem; /* Adjust padding for a wider appearance */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border: white 4px solid;
+  display: flex;
+  justify-content: flex-start; /* Align items to the start */
+  flex-wrap: nowrap; /* Prevent wrapping to a new line */
+  overflow-x: auto; /* Allow horizontal scrolling if items overflow */
+  list-style: none;
+  width: 100%; /* Ensure navbar takes full width */
+}
+
+.navbar li {
+  flex: 0 0 auto; /* Prevent items from growing or shrinking */
+  margin: 0 10px; /* Add margin between items */
+ 
+}
+
+.navbar li a {
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem; /* Adjust padding for better visibility */
+  border-radius: 6px; 
+  display: block; /* Make the entire area clickable */
+  transition: background 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar li a:hover {
+  background: linear-gradient(135deg, #b75e7e 0%, #88212b 100%);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .navbar li {
+    margin: 0 5px; /* Reduce margin for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar li a {
+    padding: 0.5rem; /* Adjust padding for smaller screens */
+    font-size: 0.9rem; /* Slightly reduce font size */
+  }
+}
+
+
+
+  /* Hero Section */
+  header.hero {
+    background: linear-gradient(135deg, #88212b 0%, #b75e7e 100%);
+    color: #fff;
+    padding: 100px 40px 70px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(20, 80, 149, 0.3);
+    margin-bottom: 60px;
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header.hero h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: slideDownFade 1s ease forwards;
+  }
+
+  header.hero h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #cbd7eb;
+    font-weight: 600;
+    line-height: 1.4;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+
+  /* Section base */
+  section {
+    margin-bottom: 80px;
+    max-width: 100%;
+  }
+
+  section h2 {
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    position: relative;
+    padding-bottom: 6px;
+    color: #7e0a2f;
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100px;
+    border-radius: 4px;
+    background: #ff3aa0;
+    box-shadow: 0 2px 10px rgba(58, 134, 255, 0.45);
+  }
+
+  section p {
+    font-size: 1.125rem;
+    color: #720a26;
+    max-width: 1240px;
+    margin-bottom: 18px;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Facility styles */
+  .facility {
+    margin-bottom: 2rem;
+  }
+
+  .facility h3 {
+    padding-bottom: 8px;
+    border-left: #7f1d2d 4px solid;
+    font-size: larger;
+    color: #952647;
+    margin-bottom: 4px;
+    font-weight: 700;
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: #7f1d2d;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .facility img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    width: 50%;
+    height: auto;
+    border: 2px solid #a6717a;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .facility img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Footer Styles */
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #933638;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+  footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #cbd7eb;
+    font-size: larger;
+  }
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    header.hero {
+      padding: 100px 30px 70px;
+    }
+
+    section h2, section p {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .facility img {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header.hero h1 {
+      font-size: 2.6rem;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  /* Animations */
+  @keyframes slideDownFade {
+    0% {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+  
+</head>
+<body>
+  
+  <header class="hero">
+    <div class="logo">
+      <h1>Hostel Facilities</h1>
+      <h3>Providing a Comfortable Living Experience for Our Students</h3>
+    </div>
+     <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Aboutus.html">About Us</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="campus-life.html">Campus Life</a></li>
+        <li><a href="hostel.html">Hostel Details</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="sports.html">Sports</a></li>
+         <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about" id="about">
+      <h2>About Our Hostel</h2>
+      <p>Our hostel facilities are designed to provide a safe, comfortable, and nurturing environment for students. With modern amenities and a focus on community living, we ensure that every student feels at home.</p>
+    </section>
+
+    <hr class="section-divider" />
+
+    <section class="facilities">
+      <h2>Facilities Offered</h2><br>
+      <br>
+
+     <div class="facility">
+      <h3>Spacious and Well-Furnished Rooms</h3><br>
+      <p>
+        Our hostel offers a variety of room options to suit the needs and preferences of our students, including single, double, and shared accommodations. Each room is thoughtfully designed with ample space, comfortable beds, study desks, storage units, and good ventilation. Modern furnishings and natural lighting create a welcoming atmosphere, making it easy for students to focus on their studies and unwind after a busy day. Regular maintenance ensures that all rooms remain clean, safe, and in excellent condition throughout the year.
+      </p>
+      <img src="IMG-20250528-WA0008.jpg" alt="Spacious Room" />
+    </div>
+
+      <div class="facility">
+  <h3>24/7 Security and Surveillance</h3><br>
+  <p>
+    The safety and security of our students are our top priorities. Our hostel is equipped with round-the-clock security personnel and advanced surveillance systems, including CCTV cameras in all common areas. Strict access control ensures that only authorized individuals can enter the premises, providing parents and students with peace of mind at all times.
+  </p>
+</div>
+
+<div class="facility">
+  <h3>Common Areas for Study</h3><br>
+  <p>
+    Dedicated study rooms and quiet zones are available for students who wish to focus on their academic work. These areas are well-lit, comfortable, and equipped with necessary resources to support group discussions, independent study, and collaborative projects.
+  </p>
+  <img src="IMG-20250528-WA0012.jpg" alt="Study Area" />
+</div>
+
+<div class="facility">
+  <h3>Recreation Spaces</h3><br>
+  <p>
+    To promote relaxation and social interaction, our hostel features recreation rooms with indoor games, comfortable seating, and entertainment options. Outdoor spaces and sports facilities are also available, encouraging students to stay active and build friendships
+    outside of their academic commitments.
+  </p>
+    <img src="IMG-20250528-WA0009.jpg" alt="Recreation Area" />
+</div>
+
+    <div class="facility">
+    <h3>Availablity of nutritious food prepared by chefs</h3><br>  
+        <p>
+  At Landmark International School Hostel, we understand the importance of a balanced diet for growing minds and bodies. Our dining facilities offer a wide variety of wholesome, freshly prepared meals each day. Menus are carefully planned by experienced chefs and nutritionists to ensure students receive all essential nutrients. We accommodate diverse dietary preferences and needs, making sure every student enjoys delicious, healthy food that supports their academic and personal well-being.
+</p>
+        <img src="IMG-20250528-WA0007.jpg" alt="Dining Area" />
+</div>
+
+<div class="facility">
+  <h3>Access to Laundry and Cleaning Services</h3><br>
+  <p>We provide convenient laundry and cleaning services to ensure students have a hassle-free living experience.</p>
+  <p>
+    Our hostel offers on-site laundry facilities, allowing students to easily manage their personal belongings and maintain hygiene. Regular cleaning of rooms and common areas is carried out by our dedicated housekeeping staff, ensuring a clean, comfortable, and healthy environment for everyone. These services help students focus on their studies and extracurricular activities without worrying about daily chores.
+  </p>
+</div>
+    </section>
+
+    <section class="links">
+      <h2>Contact Us</h2>
+      <p>If you have any questions regarding our hostel facilities, feel free to reach out via our <a href="contact.html">Contact Page</a>. We are here to assist you!</p>
+    </section>
+  </main>
+  <p><h1>Notice</h1>
+</p>
+
+ <footer>
+    <p>&copy; 2023 Landmark International School. All rights reserved.</p>
+    <p>Follow us on <a style="color: #cbd7eb;" href="https://www.facebook.com/greatInfrastructureSurroundedBySereneBeauty" target="_blank">Facebook</a> |Contact no.-082220 95565 </p>
+    <p>Designed by Landmark International School Web Team-JIVESH DAHIYA</p>
+  </footer>
+</body>
+</html>
